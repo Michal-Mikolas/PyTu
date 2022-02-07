@@ -21,7 +21,7 @@ Tools.log_path = "log/{year}-{month}-{day}_{hour}.log"  # from now log messages 
 ## Type conversions
 ```py
 Tools.str(datetime.now())                      # "2022-02-07 16:31:14"
-Tools.str("5.1234000")                         # "5.123"
+Tools.str("5.1234000")                         # "5.1234"
 Tools.str(ValueError('something went wrong'))  # "ValueError: something went wrong"
 
 Tools.datetime('7.2.2022')    # datetime(2022, 2, 7)
