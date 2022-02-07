@@ -8,7 +8,7 @@ My personal Python Tuuls :-)
 
 ```py
 from pytu.tools import Tools  # general python tools
-from pytu.Matt import Matt    # GUI automation tool based on PyAutoGUI
+from pytu.matt import Matt    # GUI autoMATion tool based on PyAutoGUI
 ```
 
 ## Logging
