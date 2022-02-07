@@ -8,7 +8,7 @@ class Tools(object):
 	date_format = '%d.%m.%Y'
 	log_path = None
 
-	def parse_date(date):
+	def datetime(date):
 		if date and type(date).__name__ == 'str':
 			# dd.mm.yyyy
 			d = re.search(r'^(\d+)\.\s*(\d+)\.\s?(\d+)$', date)

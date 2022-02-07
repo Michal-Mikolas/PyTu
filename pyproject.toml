@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "pytu"
 version = "0.1.1"
-description = ""
+description = "My personal Python Tuuls :-)"
+readme = "README.md"
 authors = ["Michal Mikolas <nanuqcz@gmail.com>"]
 
 [tool.poetry.dependencies]
