@@ -78,7 +78,10 @@ class Tools(object):
 		return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 	def log(m):
-		m = "[{:s}] {:s}".format(Tools.now_str(), m)
+		m = "[{:s}] {:s}".format(
+			Tools.now_str(),
+			Tools.str(m)
+		)
 
 		print(m)
 
