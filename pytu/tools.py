@@ -77,13 +77,13 @@ class Tools(object):
 	def now_str():
 		return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-	def log(m):
+	def log(m, end='\n'):
 		m = "[{:s}] {:s}".format(
 			Tools.now_str(),
 			Tools.str(m)
 		)
 
-		print(m)
+		print(m, end=end)
 
 		if Tools.log_path:
 			Tools.log_to_file(m)
