@@ -50,6 +50,7 @@ class Tools(object):
 
 		return date
 
+
 	def str(value):
 		if type(value).__name__ == 'str':
 			value = re.sub(r'\.0+$', '', value)
@@ -74,8 +75,10 @@ class Tools(object):
 
 		return str(value)
 
+
 	def now_str():
 		return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
 
 	def log(m, end='\n'):
 		m = "[{:s}] {:s}".format(
@@ -87,6 +90,7 @@ class Tools(object):
 
 		if Tools.log_path:
 			Tools.log_to_file(m)
+
 
 	def log_to_file(m, filepath=None):
 		if not filepath:
@@ -106,3 +110,20 @@ class Tools(object):
 
 		with open(filepath, mode='a', encoding='utf8') as file:
 			file.write(f"{m}\n")
+
+
+	def estimate_end(done:int, all:int, start_time:datetime):
+		from datetime import datetime, timedelta
+
+		seconds = (datetime.now() - start_time).seconds
+
+		total_seconds = (seconds / done) * (all - done)
+		_datetime = datetime.now() + timedelta(seconds=total_seconds)
+
+		return {
+			'total_seconds': total_seconds,
+			'total_seconds': total_seconds / 60,
+			'total_seconds': total_seconds / 60 / 60,
+			'datetime': _datetime,
+			'datetime_str': _datetime.strftime('%Y-%m-%d %H:%M:%S'),
+		}
