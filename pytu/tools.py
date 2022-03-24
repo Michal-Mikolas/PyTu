@@ -122,8 +122,9 @@ class Tools(object):
 
 		return {
 			'total_seconds': total_seconds,
-			'total_seconds': total_seconds / 60,
-			'total_seconds': total_seconds / 60 / 60,
+			'total_minutes': total_seconds / 60,
+			'total_hours': total_seconds / 60 / 60,
+			'total_days': total_seconds / 60 / 60 / 24,
 			'datetime': _datetime,
 			'datetime_str': _datetime.strftime('%Y-%m-%d %H:%M:%S'),
 		}
