@@ -10,6 +10,8 @@ class Tools(object):
 
 	def datetime(date):
 		if date and type(date).__name__ == 'str':
+			date = date.strip()
+
 			# dd.mm.yyyy
 			d = re.search(r'^(\d+)\.\s*(\d+)\.\s?(\d+)$', date)
 			if d:
@@ -128,3 +130,12 @@ class Tools(object):
 			'datetime': _datetime,
 			'datetime_str': _datetime.strftime('%Y-%m-%d %H:%M:%S'),
 		}
+
+
+	def col_num(name):
+		"""Excel-style column name to number, e.g., A = 1, Z = 26, AA = 27, AAA = 703."""
+		"""https://stackoverflow.com/questions/7261936/convert-an-excel-or-spreadsheet-column-letter-to-its-number-in-pythonic-fashion"""
+		n = 0
+		for c in name:
+			n = n * 26 + 1 + ord(c) - ord('A')
+		return n
